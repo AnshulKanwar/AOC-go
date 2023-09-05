@@ -2,6 +2,7 @@ package puzzles
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -26,15 +27,19 @@ func SolveDay1() {
 		input = append(input, calories)
 	}
 
-	maxCalorie := 0
+	maxCalories := []int{0, 0, 0}
 
 	for _, elf := range input {
 		sum := 0
 		for _, calorie := range elf {
 			sum += calorie
 		}
-		maxCalorie = max(maxCalorie, sum)
+
+		if sum > maxCalories[0] {
+			maxCalories[0] = sum
+			sort.Ints(maxCalories)
+		}
 	}
 
-	fmt.Println(maxCalorie)
+	fmt.Println(maxCalories)
 }
