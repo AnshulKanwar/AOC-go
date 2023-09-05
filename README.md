@@ -6,6 +6,8 @@ Learning Go by solving [Advent of Code](http://adventofcode.com)
 
 ## day 1
 
-### part 2
-
 - [ ] use priority queue
+
+## day 2
+
+- [ ] refactor if statements
