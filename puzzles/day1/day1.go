@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"anshulkanwar.com/aoc-go/internal"
+	"github.com/anshulkanwar/aoc-go/internal"
 )
 
 func SolveDay1() {
