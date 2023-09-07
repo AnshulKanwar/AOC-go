@@ -7,54 +7,29 @@ import (
 )
 
 func SolveDay2() {
-	inputStr := internal.ReadInputFile("puzzles/day2/input.txt")
-
 	var input [][]string
+
+	inputStr := internal.ReadInputFile("puzzles/day2/input.txt")
 
 	for _, round := range strings.Split(inputStr, "\n") {
 		input = append(input, strings.Split(round, " "))
 	}
 
-	selectPoint := make(map[string]int)
-	selectPoint["X"] = 1
-	selectPoint["Y"] = 2
-	selectPoint["Z"] = 3
-
 	score := 0
 
+	game := map[string]map[string]string{
+		"A": {"Z": "paper", "Y": "rock", "X": "scissors"},
+		"B": {"Z": "scissors", "Y": "paper", "X": "rock"},
+		"C": {"Z": "rock", "Y": "scissors", "X": "paper"},
+	}
+
+	pointsOnChoice := map[string]int{"rock": 1, "paper": 2, "scissors": 3}
+	pointsOnEnd := map[string]int{"Z": 6, "Y": 3, "X": 0}
+
 	for _, round := range input {
-		opponent, you := round[0], round[1]
-
-		score += selectPoint[you]
-
-		if opponent == "A" {
-			switch you {
-			case "X":
-				score += 3
-			case "Y":
-				score += 6
-			case "Z":
-				score += 0
-			}
-		} else if opponent == "B" {
-			switch you {
-			case "X":
-				score += 0
-			case "Y":
-				score += 3
-			case "Z":
-				score += 6
-			}
-		} else if opponent == "C" {
-			switch you {
-			case "X":
-				score += 6
-			case "Y":
-				score += 0
-			case "Z":
-				score += 3
-			}
-		}
+		opponent, end := round[0], round[1]
+		move := game[opponent][end]
+		score += pointsOnChoice[move] + pointsOnEnd[end]
 	}
 
 	println(score)
