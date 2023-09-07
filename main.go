@@ -1,7 +1,7 @@
 package main
 
-import puzzles "github.com/anshulkanwar/aoc-go/puzzles/day2"
+import puzzles "github.com/anshulkanwar/aoc-go/puzzles/day3"
 
 func main() {
-	puzzles.SolveDay2()
+	puzzles.SolveDay3Part1()
 }
