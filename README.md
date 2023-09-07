@@ -4,6 +4,7 @@ Learning Go by solving [Advent of Code](http://adventofcode.com)
 
 - [ ] `input.go` - Buffered read
 - [ ] separate day 1,2's parts
+- [ ] add tests
 
 ## day 1
 
