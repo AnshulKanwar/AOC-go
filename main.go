@@ -1,7 +1,11 @@
 package main
 
-import puzzles "github.com/anshulkanwar/aoc-go/puzzles/day3"
+import (
+	"fmt"
+
+	puzzles "github.com/anshulkanwar/aoc-go/puzzles/day4"
+)
 
 func main() {
-	puzzles.SolveDay3Part2()
+	fmt.Println(puzzles.SovleDay4Part1(puzzles.ParseInput()))
 }
