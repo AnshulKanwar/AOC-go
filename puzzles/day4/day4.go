@@ -43,3 +43,21 @@ func SovleDay4Part1(input [][][]int) int {
 
 	return answer
 }
+
+func SovleDay4Part2(input [][][]int) int {
+	answer := 0
+
+	for _, sectionPair := range input {
+		elf1First, elf1Second := sectionPair[0][0], sectionPair[0][1]
+		elf2First, elf2Second := sectionPair[1][0], sectionPair[1][1]
+
+		maxFirst := max(elf1First, elf2First)
+		minSecond := min(elf1Second, elf2Second)
+
+		if minSecond >= maxFirst {
+			answer += 1
+		}
+	}
+
+	return answer
+}

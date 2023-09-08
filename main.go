@@ -7,5 +7,5 @@ import (
 )
 
 func main() {
-	fmt.Println(puzzles.SovleDay4Part1(puzzles.ParseInput()))
+	fmt.Println(puzzles.SovleDay4Part2(puzzles.ParseInput()))
 }
